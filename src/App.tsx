@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/header";
 import Contatos from "./components/contacts";
 import NewContact from "./components/newContact";
@@ -10,6 +10,7 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="home" />} />
           <Route
             path="/home"
             element={
